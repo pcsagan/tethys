@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tethys"
+authors = [{name = "Pat", email = "pcsagan@gmail.com"}]
+description = "A template for a python module with tox, pytest, flake8, and mypy. "
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = ["tethys"]
+license = {file = "LICENSE"}
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = ["requests"]
+dynamic = ["version"]
+
+[project.urls]
+repository = "https://github.com/pcsagan/tethys"
+
+[project.scripts]
+foobar = "tethys.foo:bar"
+
+[tool.setuptools]
+py-modules = ["tethys"]
