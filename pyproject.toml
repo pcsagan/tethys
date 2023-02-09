@@ -24,6 +24,7 @@ version = {attr = "tethys.__version__"}
 repository = "https://github.com/pcsagan/tethys"
 
 [project.scripts]
+tethys = "tethys.cli:cli"
 foobar = "tethys.foo:bar"
 
 [tool.setuptools]

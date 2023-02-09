@@ -1,4 +1,4 @@
-from tethys.foo import bar, fetch
+from tethys.foobar import bar, fetch
 
 
 def test_foobar():
