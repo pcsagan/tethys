@@ -1,6 +1,6 @@
-# tethys
-
-A template for a python module with tox, pytest, flake8, and mypy.
+<p align="center">
+  <img src="https://i.imgur.com/jjnYRTV.png" title="tethys">
+</p>
 
 ## Dependencies
 
