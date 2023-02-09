@@ -11,18 +11,39 @@
 
 The `pyproject.toml` file determines which dependencies are installed along with the module. The `requirements.txt` file is used to initialize your development environment. The `requirements_dev.txt` file is used to initialize the testing virtual environments. The testing modules are only installed in the testing environment.
 
-## Usage
+## Template
 
-To execute the tests run:
+To use this project as a template simply do the following:
+
+1. Find and replace all instances of `tethys` with your project name
+2. Update `pyproject.toml` to reflect its new author and requirements
+    - Set the version by changing the `__version__` value in the `__init__.py` file
+    - List of [Classifiers](https://pypi.org/classifiers/)
+    - Configuration for [mypy](https://mypy.readthedocs.io/en/stable/config_file.html)
+3. Update `tox.ini` to build the desired testing environments
+    - Configuration for [pytest](https://docs.pytest.org/en/7.1.x/reference/customize.html#tox-ini)
+    - Configuration for [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/tox.html)
+    - Configuration for [flake8](https://flake8.pycqa.org/en/latest/user/configuration.html)
+4. Update `cli.py` to customize the command line interface
+5. Test your module using `tox`
+6. Use `pip freeze > requirements.txt` to preserve your development environment
+
+
+## Help
 
 ```
-tox
-```
+Usage: tethys [OPTIONS] COMMAND [ARGS]...
 
-To test the module scripts run:
+  Tethys is a moon of Saturn.
 
-```
-foobar
+Options:
+  --version  Show the version and exit.
+  --debug    Run the command in debug mode.
+  --help     Show this message and exit.
+
+Commands:
+  data  Print the shared context data to the screen.
+  foo   Print the result of calling the foo function to the screen.
 ```
 
 ## License
