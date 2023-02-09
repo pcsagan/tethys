@@ -1,20 +1,25 @@
-# tethys
+<div align="center">
 
-A template for a python module with tox, pytest, flake8, and mypy.
+<img src="https://i.imgur.com/jjnYRTV.png" title="tethys">
+
+[![Tests: Passing](https://img.shields.io/badge/Tests-Passing-forestgreen.svg)](https://github.com/pcsagan/tethys/blob/main/tox.ini)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/pcsagan/tethys/blob/main/LICENSE)
+
+</div>
 
 ## Dependencies
 
-The `dependencies` attribute in the `[project]` table within `pyproject.toml` determines which dependencies are installed along with the module. The `requirements.txt` file is used to initialize your development environment. The `requirements_dev.txt` file is used to initialize the testing virtual environments. The testing modules `pytest`, `flake8`, and `mypy` are only installed in the testing environment.
+The `pyproject.toml` file determines which dependencies are installed along with the module. The `requirements.txt` file is used to initialize your development environment. The `requirements_dev.txt` file is used to initialize the testing virtual environments. The testing modules are only installed in the testing environment.
 
 ## Usage
 
-To test the module run the `tox` command
+To execute the tests run:
 
 ```
 tox
 ```
 
-To test the module scripts defined in `[project.scripts]` in `pyproject.toml` run the `foobar` command
+To test the module scripts run:
 
 ```
 foobar
@@ -22,6 +27,6 @@ foobar
 
 ## License
 
-This project is licensed under the **MIT license**. Feel free to edit and distribute this template as you like.
+This project is licensed under the **MIT license**.
 
 See [LICENSE](LICENSE) for more information.
