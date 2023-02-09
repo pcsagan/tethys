@@ -1,6 +1,11 @@
-<p align="center">
-  <img src="https://i.imgur.com/jjnYRTV.png" title="tethys">
-</p>
+<div align="center">
+
+<img src="https://i.imgur.com/jjnYRTV.png" title="tethys">
+
+[![Tests: Passing](https://img.shields.io/badge/Tests-Passing-forestgreen.svg)](https://github.com/pcsagan/tethys/blob/main/tox.ini)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/pcsagan/tethys/blob/main/LICENSE)
+
+</div>
 
 ## Dependencies
 
@@ -8,13 +13,13 @@ The `pyproject.toml` file determines which dependencies are installed along with
 
 ## Usage
 
-To test the module run the `tox` command
+To execute the tests run:
 
 ```
 tox
 ```
 
-To test the module scripts run the `foobar` command
+To test the module scripts run:
 
 ```
 foobar
@@ -22,6 +27,6 @@ foobar
 
 ## License
 
-This project is licensed under the **MIT license**. Feel free to edit and distribute this template as you like.
+This project is licensed under the **MIT license**.
 
 See [LICENSE](LICENSE) for more information.
