@@ -2,8 +2,11 @@
 
 <img src="https://i.imgur.com/jjnYRTV.png" title="tethys">
 
-[![Tests: Passing](https://img.shields.io/badge/Tests-Passing-forestgreen.svg)](https://github.com/pcsagan/tethys/blob/main/tox.ini)
+[![Tests](https://github.com/pcsagan/tethys/actions/workflows/tests.yml/badge.svg)](https://github.com/pcsagan/tethys/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/pcsagan/tethys/blob/main/LICENSE)
+
+
+
 
 </div>
 
