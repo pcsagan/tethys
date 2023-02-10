@@ -1,11 +1,13 @@
-
+"""Command Line Interface."""
 import click
 from tethys.foobar import foo as library_foo
 
 
 @click.group()
 @click.version_option()
-@click.option("--debug", default=False, is_flag=True, help="Run the command in debug mode.")
+@click.option(
+    "--debug", default=False, is_flag=True, help="Run the command in debug mode."
+)
 @click.pass_context
 def cli(ctx, debug):
     """Tethys is a moon of Saturn."""
@@ -17,7 +19,7 @@ def cli(ctx, debug):
 @click.pass_context
 def foo(ctx):
     """Print the result of calling the foo function to the screen."""
-    color = 'red' if ctx.obj['debug'] else 'green'
+    color = "red" if ctx.obj["debug"] else "green"
     click.secho(library_foo(), fg=color)
 
 

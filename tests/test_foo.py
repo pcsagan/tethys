@@ -1,8 +1,8 @@
-from tethys.foobar import bar, fetch
+from tethys.foobar import foo, fetch
 
 
 def test_foobar():
-    assert 'foo' == bar()
+    assert foo() == 'bar'
 
 
 def test_fetch():
