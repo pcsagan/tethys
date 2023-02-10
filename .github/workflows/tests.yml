@@ -26,6 +26,7 @@ jobs:
     - name: Install the package
       run: |
         pip install -e .
+        pip install tox
     - name: Run tests
       run: |
         tox
