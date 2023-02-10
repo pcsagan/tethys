@@ -9,7 +9,17 @@
 
 ## Dependencies
 
-The `pyproject.toml` file determines which dependencies are installed along with the module. The `requirements.txt` file is used to initialize your development environment. The `requirements_dev.txt` file is used to initialize the testing virtual environments. The testing modules are only installed in the testing environment.
+The `pyproject.toml` file determines which dependencies are installed along with the module:
+
+```
+pip install -e .
+```
+
+The `requirements.txt` file is used to initialize your development environment:
+
+```
+pip install -r requirements.txt
+```
 
 ## Usage
 
