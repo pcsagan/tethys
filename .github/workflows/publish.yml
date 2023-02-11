@@ -31,4 +31,4 @@ jobs:
         env:
           PYPI_API_TOKEN: ${{ secrets.pypi_api_token }}
         run: |
-          python3 -m twine upload testpypi dist/* -u "__token__" -p "$PYPI_API_TOKEN"
+          python3 -m twine upload -u "__token__" -p "$PYPI_API_TOKEN" -r testpypi dist/*
