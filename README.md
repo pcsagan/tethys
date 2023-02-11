@@ -4,7 +4,7 @@
 
 [![Tests](https://github.com/pcsagan/tethys/actions/workflows/tests.yml/badge.svg)](https://github.com/pcsagan/tethys/actions/workflows/tests.yml)
 [![PyPI](https://img.shields.io/pypi/v/tethys-template.svg?label=PyPI)](https://pypi.org/project/tethys-template/)
-[![Code of conduct](https://img.shields.io/badge/Code%20of%20conduct-welcoming-blue)](CODE_OF_CONDUCT.md)
+[![Code of conduct](https://img.shields.io/badge/Code%20of%20conduct-welcoming-blue)](https://github.com/pcsagan/tethys/blob/main/CODE_OF_CONDUCT.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/pcsagan/tethys/blob/main/LICENSE)
 
 </div>
