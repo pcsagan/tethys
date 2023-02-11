@@ -9,7 +9,7 @@
 
 ## Using this template
 
-1. Create a new repository using Guthub's template interface, or run the following commands:
+1. Create a new repository using Github's template interface, or run the following commands:
     ```shell
     git clone https://github.com/pcsagan/tethys <your_package_name>
     cd <your_package_name>
@@ -19,7 +19,7 @@
 2. Find and replace all instances of `tethys` and `tethys-template` with your package name
     - Your project name can match your package name. The name `tethys-template` was required because of a clash with an existing `tethys` on PyPI
 3. Update `pyproject.toml` to reflect its new author and requirements
-    - Set the version to new value before publishing to PyPI (or TestPyPI)
+    - Set the version to new value before publishing to [PyPI](https://pypi.org) (and [TestPyPI](https://test.pypi.org))
     - List of [Classifiers](https://pypi.org/classifiers/)
     - Configuration for [mypy](https://mypy.readthedocs.io/en/stable/config_file.html)
 4. Update `tox.ini` to build the desired testing environments
@@ -50,7 +50,7 @@
         ```shell
         pip install -r requirements.txt
         ```
-10. Set the version attribute of the project table in the `pyproject.toml` file to a unique value in order to satisfy PyPi (and TestPyPI)
+10. Set the version attribute of the project table in the `pyproject.toml` file to a unique value in order to satisfy [PyPI](https://pypi.org) (and [TestPyPI](https://test.pypi.org))
 11. Register on [PyPI](https://pypi.org) (and [TestPyPI](https://test.pypi.org)) and generate [API tokens](https://pypi.org/help/#apitoken)
 12. Add your tokens as a [secret variable](https://docs.github.com/en/actions/security-guides/encrypted-secrets) named `pypi_api_token` and `testpypi_api_token` to your Github repository
 13. Manually run the `Publish Test` action to verify that your token and package version are accepted using TestPyPI
