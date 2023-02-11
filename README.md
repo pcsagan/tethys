@@ -33,7 +33,7 @@
     - Documentation for [click](https://click.palletsprojects.com/)
     - The entry point is defined in the project.scripts table in the `pyproject.toml` file
 6. Update `.git/workflows/tests.yaml` to specify the various operating systems and python versions used for testing
-7. Add your code to the package while regularly committing your changes to Github
+7. Add your code to the package while regularly committing your changes to your Github repository
     - Use the `tox` command to test your changes locally. This is what the `Tests` action on Github does.
 8. Add your tests to the `tests` directory
 9. Test your package using `tox`
@@ -46,14 +46,15 @@
         tox -e pytest
         tox -e flake8
         ```
-    - Iinstall all the tools used by `tox` into your local environment using the command:
+    - Install all the tools used by `tox` into your local environment using the command:
         ```shell
         pip install -r requirements.txt
         ```
-
-
-6. Use `pip freeze > requirements.txt` to preserve your development environment
-
+10. Set the version attribute of the project table in the `pyproject.toml` file to a unique value in order to satisfy PyPi (and TestPyPI)
+11. Register on [PyPI](https://pypi.org) (and [TestPyPI](https://test.pypi.org)) and generate [API tokens](https://pypi.org/help/#apitoken)
+12. Add your tokens as a [secret variable](https://docs.github.com/en/actions/security-guides/encrypted-secrets) named `pypi_api_token` and `testpypi_api_token` to your Github repository
+13. Manually run the `Publish Test` action to verify that your token and package version are accepted using TestPyPI
+14. Manually run the `Publish` action to publish your package on PyPI
 
 ## Help
 
