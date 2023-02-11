@@ -3,6 +3,7 @@
 <img src="https://i.imgur.com/jjnYRTV.png" title="tethys">
 
 [![Tests](https://github.com/pcsagan/tethys/actions/workflows/tests.yml/badge.svg)](https://github.com/pcsagan/tethys/actions/workflows/tests.yml)
+[![Code of conduct](https://img.shields.io/badge/Code%20of%20conduct-welcoming-blue)](CODE_OF_CONDUCT.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/pcsagan/tethys/blob/main/LICENSE)
 
 </div>
@@ -73,8 +74,3 @@ Commands:
   foo   Print the result of calling the foo function to the screen.
 ```
 
-## License
-
-This project is licensed under the **MIT license**.
-
-See [LICENSE](LICENSE) for more information.
