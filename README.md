@@ -36,7 +36,21 @@
 7. Add your code to the package while regularly committing your changes to Github
     - Use the `tox` command to test your changes locally. This is what the `Tests` action on Github does.
 8. Add your tests to the `tests` directory
-9. Test your module using `tox`
+9. Test your package using `tox`
+    - Run all tests in their own environments using the command:
+        ```shell
+        tox
+        ```
+    - Run specific tests using `tox` with the `-e` flag:
+        ```shell
+        tox -e pytest
+        tox -e flake8
+        ```
+    - Iinstall all the tools used by `tox` into your local environment using the command:
+        ```shell
+        pip install -r requirements.txt
+        ```
+
 
 6. Use `pip freeze > requirements.txt` to preserve your development environment
 
