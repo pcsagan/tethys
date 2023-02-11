@@ -2,9 +2,6 @@ name: Publish
 
 on:
   workflow_dispatch:
-    inputs:
-      name:
-        description: 'Publish to PyPI'
         
 permissions:
   contents: read
