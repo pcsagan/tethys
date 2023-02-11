@@ -55,6 +55,13 @@
         ```shell
         tox -e pytest
         tox -e flake8
+        ...
+        ```
+    - If you installed the `requirements.txt` file then you can run testing modules without `tox` in your local environment:
+        ```shell
+        pytest <my_package_name>
+        flake8 <my_package_name> tests
+        ...
         ```
 10. Register on [PyPI](https://pypi.org) (and [TestPyPI](https://test.pypi.org)) and generate [API tokens](https://pypi.org/help/#apitoken)
 11. Add your tokens as a [secret variable](https://docs.github.com/en/actions/security-guides/encrypted-secrets) named `pypi_api_token` and `testpypi_api_token` to your Github repository
