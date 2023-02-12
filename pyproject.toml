@@ -23,7 +23,7 @@ classifiers = [
     "Operating System :: POSIX :: Linux",
     "Typing :: Typed",
 ]
-dependencies = ["requests"]
+dependencies = []
 dynamic = ["version"]
 
 [tool.setuptools.dynamic]
