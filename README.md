@@ -21,6 +21,7 @@
 2. Find and replace all instances of `tethys` and `tethys-template` with your package name
     - Your project name can match your package name. The name `tethys-template` was required because`tethys` already exists on PyPI
 3. Update `pyproject.toml` to reflect its new author and requirements
+    - Update the [Security Policy](https://github.com/pcsagan/tethys/blob/main/SECURITY.md) and the [Code of Conduct](https://github.com/pcsagan/tethys/blob/main/CODE_OF_CONDUCT.md) with your e-mail address
     - Set the version to a value that hasn't already been published to [PyPI](https://pypi.org) (and [TestPyPI](https://test.pypi.org))
     - List of [Classifiers](https://pypi.org/classifiers/)
     - Configuration for [mypy](https://mypy.readthedocs.io/en/stable/config_file.html)
@@ -47,21 +48,31 @@
 7. Add your code to the package while regularly committing your changes to your Github repository
 8. Add your tests to the `tests` directory
 9. Test your package using `tox`
-    - Run all tests in their own environments using the command:
+    - Run all tasks in their own environments using the command:
         ```shell
         tox
         ```
-    - Run specific tests using `tox` with the `-e` flag:
+    - Run specific tasks using `tox` with the `-e` flag:
         ```shell
-        tox -e pytest
+        tox -e black
+        tox -e docs
         tox -e flake8
-        ...
+        tox -e mypy
+        tox -e pycodestyle
+        tox -e pydocstyle
+        tox -e pytest
+        tox -e validate-pyproject
         ```
-    - If you installed the `requirements.txt` file then you can run testing modules without `tox` in your local environment:
+    - If you installed the `requirements.txt` file then you can use testing packages in your local environment:
         ```shell
-        pytest <my_package_name>
-        flake8 <my_package_name> tests
-        ...
+        black src
+        sphinx-apidoc -f -o docs/source src/<my_package_name>
+        sphinx-build -b html docs/source docs/build/html
+        flake8 src tests
+        mypy src
+        pycodestyle src
+        pydocstyle src
+        pytest tests
         ```
 10. Register on [PyPI](https://pypi.org) (and [TestPyPI](https://test.pypi.org)) and generate [API tokens](https://pypi.org/help/#apitoken)
 11. Add your tokens as a [secret variable](https://docs.github.com/en/actions/security-guides/encrypted-secrets) named `pypi_api_token` and `testpypi_api_token` to your Github repository
