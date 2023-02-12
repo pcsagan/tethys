@@ -2,6 +2,14 @@ import pytest
 from tethys import docs
 
 
+def test_function_with_types_in_docstring():
+    assert docs.function_with_types_in_docstring(1, 'two') is True
+
+
+def test_function_with_pep484_type_annotations():
+    assert docs.function_with_pep484_type_annotations(1, 'two') is True
+
+
 def test_module_level_function_pass():
     assert docs.module_level_function(1, 2) is True
 
