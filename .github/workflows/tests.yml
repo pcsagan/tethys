@@ -34,4 +34,4 @@ jobs:
           pip install tox
       - name: Run tox
         run: |
-          tox run-parallel
+          tox
