@@ -1,6 +1,5 @@
 """Command Line Interface."""
 import click
-from tethys.foobar import foo as library_foo
 
 
 @click.group()
@@ -18,9 +17,9 @@ def main(ctx, debug):
 @main.command()
 @click.pass_context
 def foo(ctx):
-    """Print the result of calling the foo function to the screen."""
+    """Print the word bar in red or green depending on whether the debug flag is set."""
     color = "red" if ctx.obj["debug"] else "green"
-    click.secho(library_foo(), fg=color)
+    click.secho("bar", fg=color)
 
 
 @main.command()

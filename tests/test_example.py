@@ -1,35 +1,35 @@
 import pytest
-from tethys import docs
+from tethys import example
 
 
 def test_function_with_types_in_docstring():
-    assert docs.function_with_types_in_docstring(1, 'two') is True
+    assert example.function_with_types_in_docstring(1, 'two') is True
 
 
 def test_function_with_pep484_type_annotations():
-    assert docs.function_with_pep484_type_annotations(1, 'two') is True
+    assert example.function_with_pep484_type_annotations(1, 'two') is True
 
 
 def test_module_level_function_pass():
-    assert docs.module_level_function(1, 2) is True
+    assert example.module_level_function(1, 2) is True
 
 
 def test_module_level_function_fail():
     with pytest.raises(ValueError):
-        docs.module_level_function(1, 1)
+        example.module_level_function(1, 1)
 
 
 def test_example_generator():
-    assert list(docs.example_generator(4)) == [0, 1, 2, 3]
+    assert list(example.example_generator(4)) == [0, 1, 2, 3]
 
 
 def test_example_error():
-    with pytest.raises(docs.ExampleError):
-        raise docs.ExampleError('Internal Server Error', 500)
+    with pytest.raises(example.ExampleError):
+        raise example.ExampleError('Internal Server Error', 500)
 
 
 def test_example_class():
-    c = docs.ExampleClass('test', 200, ['hello', 'world'])
+    c = example.ExampleClass('test', 200, ['hello', 'world'])
     c.readwrite_property = 'foo'
     assert c.readonly_property == 'readonly_property'
     assert c.readwrite_property == 'foo'
