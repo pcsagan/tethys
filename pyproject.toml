@@ -24,7 +24,7 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = ["requests"]
-version = "1.0.1"
+version = "1.0.2"
 
 [tool.setuptools.dynamic]
 version = {attr = "tethys.__version__"}
@@ -35,8 +35,5 @@ Issues = "https://github.com/pcsagan/tethys/issues"
 Actions = "https://github.com/pcsagan/tethys/actions"
 
 [project.scripts]
-tethys = "tethys.cli:cli"
-foobar = "tethys.foo:bar"
+tethys = "tethys.cli:main"
 
-[tool.setuptools]
-py-modules = ["tethys"]

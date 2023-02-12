@@ -9,13 +9,13 @@ from tethys.foobar import foo as library_foo
     "--debug", default=False, is_flag=True, help="Run the command in debug mode."
 )
 @click.pass_context
-def cli(ctx, debug):
+def main(ctx, debug):
     """Tethys is a moon of Saturn."""
     ctx.ensure_object(dict)
     ctx.obj = {"debug": debug}
 
 
-@cli.command()
+@main.command()
 @click.pass_context
 def foo(ctx):
     """Print the result of calling the foo function to the screen."""
@@ -23,7 +23,7 @@ def foo(ctx):
     click.secho(library_foo(), fg=color)
 
 
-@cli.command()
+@main.command()
 @click.pass_context
 def data(ctx):
     """Print the shared context data to the screen."""
