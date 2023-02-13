@@ -5,6 +5,7 @@ on:
     inputs:
       use-testpypi:
         description: 'Use TestPyPI'
+        type: boolean
         required: false
         default: false
 
