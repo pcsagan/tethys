@@ -2,6 +2,11 @@ name: Publish
 
 on:
   workflow_dispatch:
+    inputs:
+      use-testpypi:
+        description: 'Use TestPyPI'
+        required: false
+        default: false
 
 permissions:
   contents: read
@@ -27,8 +32,16 @@ jobs:
         run: |
           python -m build
       - name: Publish package to PyPI
+        if: '${{ github.event.inputs.use-testpypi == false }}'
         shell: bash
         env:
           PYPI_API_TOKEN: ${{ secrets.pypi_api_token }}
         run: |
-          twine upload -u "__token__" -p "$PYPI_API_TOKEN" dist/*
+          echo "uploading to PyPI!"
+      - name: Publish package to TestPyPI
+        if: '${{ github.event.inputs.use-testpypi == true }}'
+        shell: bash
+        env:
+          PYPI_API_TOKEN: ${{ secrets.testpypi_api_token }}
+        run: |
+          echo "uploading to TestPyPI!"
