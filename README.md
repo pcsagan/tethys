@@ -12,6 +12,7 @@
 ## Using this template
 
 1. Create a new repository using Github's template interface, or run the following commands:
+
     ```shell
     git clone https://github.com/pcsagan/tethys <your_package_name>
     cd <your_package_name>
@@ -38,10 +39,12 @@
 6. Update `.git/workflows/tests.yaml` to specify the various operating systems and python versions used for testing
 7. Install your package dependencies into your development environment
     - Install the package locally in editable mode using the command:
+    
         ```shell
         pip install -e .
         ```
     - Install the package locally along with all testing libraries used by `tox` with the command:
+    
         ```shell
         pip install -r requirements.txt
         ```
@@ -49,10 +52,12 @@
 8. Add your tests to the `tests` directory
 9. Test your package using `tox`
     - Run all tasks in their own environments using the command:
+    
         ```shell
         tox
         ```
     - Run specific tasks using `tox` with the `-e` flag:
+    
         ```shell
         tox -e black
         tox -e docs
@@ -64,6 +69,7 @@
         tox -e validate-pyproject
         ```
     - If you installed the `requirements.txt` file then you can use testing packages in your local environment:
+    
         ```shell
         black src
         sphinx-apidoc -f -o docs/source src/<my_package_name>
