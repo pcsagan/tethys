@@ -29,6 +29,9 @@ dynamic = ["version"]
 [tool.setuptools.dynamic]
 version = {attr = "tethys.__version__"}
 
+[tool.pydocstringformatter]
+write = true
+
 [project.urls]
 Code = "https://github.com/pcsagan/tethys"
 Issues = "https://github.com/pcsagan/tethys/issues"
