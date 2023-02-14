@@ -167,4 +167,5 @@ cython_debug/
 *.pyproj.user
 
 # generated docs from sphinx-apidoc
-docs/source/*.rst
+docs/source/modules.rst
+docs/source/tethys.rst
