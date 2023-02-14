@@ -1,11 +1,13 @@
-# Tethys: Python package template with testing, documentation, and publishing
+# Tethys: Testing, Documentation, and Publishing
 
 [![Tests](https://github.com/pcsagan/tethys/actions/workflows/tests.yml/badge.svg)](https://github.com/pcsagan/tethys/actions/workflows/tests.yml)
+[![Security: Bandit](https://img.shields.io/badge/Security-Bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![PyPI](https://img.shields.io/pypi/v/tethys-template.svg?label=PyPI)](https://pypi.org/project/tethys-template/)
 [![Code of conduct](https://img.shields.io/badge/Code%20of%20conduct-welcoming-blue)](https://github.com/pcsagan/tethys/blob/main/CODE_OF_CONDUCT.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/pcsagan/tethys/blob/main/LICENSE)
+<br/>Tethys is modern python package template. It demonstrates automation, configuration, environment orchestration, code validation, and Github actions. It comes with a [command line interface](), and it also contains an example [readme](), [security policy](), and [code of conduct]().
 
-Tethys is modern python package template. It demonstrates automation, configuration, environment orchestration, code validation, and Github actions. It comes with a [command line interface](), and it also contains an example [readme](), [security policy](), and [code of conduct]().
+This package relies heavily on the great work of the [Python Code Quality Authority](https://github.com/PyCQA). Praise them!
 
 # Features
 
