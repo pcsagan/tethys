@@ -29,13 +29,12 @@ Todo:
 
 .. _Google Python Style Guide:
    https://google.github.io/styleguide/pyguide.html
-
 """
 
 module_level_variable1 = 12345
 
 module_level_variable2 = 98765
-"""int: Module level variable documented inline.
+"""Int: Module level variable documented inline.
 
 The docstring may span multiple lines. The type may optionally be specified
 on the first line, separated by a colon.
@@ -68,7 +67,6 @@ def function_with_pep484_type_annotations(param1: int, param2: str) -> bool:
 
     Returns:
         The return value. True for success, False otherwise.
-
     """
     return True
 
@@ -120,7 +118,6 @@ def module_level_function(param1, param2=None, *args, **kwargs):
         AttributeError: The ``Raises`` section is a list of all exceptions
             that are relevant to the interface.
         ValueError: If `param2` is equal to `param1`.
-
     """
     if param1 == param2:
         raise ValueError("param1 may not be equal to param2")
@@ -142,7 +139,6 @@ def example_generator(n):
 
         >>> print([i for i in example_generator(4)])
         [0, 1, 2, 3]
-
     """
     yield from range(n)
 
@@ -166,7 +162,6 @@ class ExampleError(Exception):
     Attributes:
         msg (str): Human readable string describing the exception.
         code (int): Exception error code.
-
     """
 
     def __init__(self, msg, code):
@@ -188,7 +183,6 @@ class ExampleClass:
     Attributes:
         attr1 (str): Description of `attr1`.
         attr2 (:obj:`int`, optional): Description of `attr2`.
-
     """
 
     def __init__(self, param1, param2, param3):
@@ -208,7 +202,6 @@ class ExampleClass:
             param2 (:obj:`int`, optional): Description of `param2`. Multiple
                 lines are supported.
             param3 (list(str)): Description of `param3`.
-
         """
         self.attr1 = param1
         self.attr2 = param2
@@ -218,18 +211,18 @@ class ExampleClass:
         self.attr4 = ["attr4"]
 
         self.attr5 = None
-        """str: Docstring *after* attribute, with type specified."""
+        """Str: Docstring *after* attribute, with type specified."""
 
         self.readwrite_property = "readwrite_property"
 
     @property
     def readonly_property(self):
-        """str: Properties should be documented in their getter method."""
+        """Str: Properties should be documented in their getter method."""
         return "readonly_property"
 
     @property
     def readwrite_property(self):
-        """list(str): Properties with both a getter and setter should only be documented in their getter method.
+        """List(str): Properties with both a getter and setter should only be documented in their getter method.
 
         If the setter method contains notable behavior, it should be
         mentioned here.
@@ -252,7 +245,6 @@ class ExampleClass:
 
         Returns:
             True if successful, False otherwise.
-
         """
         return True
 
@@ -268,7 +260,6 @@ class ExampleClass:
         Sphinx's conf.py::
 
             napoleon_include_special_with_doc = True
-
         """
         pass
 
@@ -286,7 +277,6 @@ class ExampleClass:
         by changing the following setting in Sphinx's conf.py::
 
             napoleon_include_private_with_doc = True
-
         """
         pass
 
@@ -306,7 +296,6 @@ class ExamplePEP526Class:
     Attributes:
         attr1: Description of `attr1`.
         attr2: Description of `attr2`.
-
     """
 
     attr1: str
