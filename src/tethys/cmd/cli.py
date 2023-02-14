@@ -9,7 +9,7 @@ import click
 )
 @click.pass_context
 def main(ctx, debug):
-    """Tethys is a moon of Saturn."""
+    """Tethys command line interface."""
     ctx.ensure_object(dict)
     ctx.obj = {"debug": debug}
 
@@ -17,7 +17,7 @@ def main(ctx, debug):
 @main.command()
 @click.pass_context
 def foo(ctx):
-    """Print the word bar in red or green depending on whether the debug flag is set."""
+    """Print the word 'bar' in red if debug is true, or green if debug is false."""
     color = "red" if ctx.obj["debug"] else "green"
     click.secho("bar", fg=color)
 

@@ -26,17 +26,43 @@ classifiers = [
 dependencies = []
 dynamic = ["version"]
 
-[tool.setuptools.dynamic]
-version = {attr = "tethys.__version__"}
+[project.optional-dependencies]
+docs = [
+    "sphinx",
+]
+format = [
+    "black",
+    "isort",
+    "pyupgrade",
+    "pydocstringformatter",
+]
+lint = [
+    "bandit[toml]",
+    "flake8",
+    "flake8-bugbear",
+    "mypy",
+    "types-click",
+    "types-requests",
+    "pycodestyle",
+    "pydocstyle",
+    "validate-pyproject",
+]
+test = [
+    "pytest",
+    "pytest-cov",
+]
 
-[tool.pydocstringformatter]
-write = true
+[project.scripts]
+tethys = "tethys.cmd.cli:main"
+tethys-quickstart = "tethys.cmd.cli:main"
 
 [project.urls]
 Code = "https://github.com/pcsagan/tethys"
 Issues = "https://github.com/pcsagan/tethys/issues"
 Actions = "https://github.com/pcsagan/tethys/actions"
 
-[project.scripts]
-tethys = "tethys.cli:main"
+[tool.setuptools.dynamic]
+version = {attr = "tethys.__version__"}
 
+[tool.pydocstringformatter]
+write = true
