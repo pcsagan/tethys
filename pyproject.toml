@@ -23,7 +23,7 @@ classifiers = [
     "Operating System :: POSIX :: Linux",
     "Typing :: Typed",
 ]
-dependencies = []
+dependencies = ["click", "tox"]
 dynamic = ["version"]
 
 [project.optional-dependencies]
@@ -65,6 +65,9 @@ Actions = "https://github.com/pcsagan/tethys/actions"
 
 [tool.setuptools.dynamic]
 version = {attr = "tethys.__version__"}
+
+[tool.setuptools.package-data]
+"tethys.templates" = ["**/*.*_t"]
 
 [tool.pydocstringformatter]
 write = true
