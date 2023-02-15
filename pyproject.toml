@@ -40,11 +40,13 @@ lint = [
     "bandit[toml]",
     "flake8",
     "flake8-bugbear",
+    "importlib-metadata",   # required for type stubs
     "mypy",
     "types-click",
     "types-requests",
     "pycodestyle",
     "pydocstyle",
+    "sphinx",               # required for type stubs
     "validate-pyproject",
 ]
 test = [

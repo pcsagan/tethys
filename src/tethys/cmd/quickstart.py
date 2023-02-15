@@ -1,16 +1,18 @@
 """Quick start script."""
 from distutils.sysconfig import get_python_lib
 from os import getcwd, path
-from typing import Any, Callable
+from typing import Any, Callable, Dict
 
 import click
 from sphinx.util.osutil import ensuredir
 from sphinx.util.template import SphinxRenderer
 
-DEFAULTS = {}
+DEFAULTS: Dict[str, Any] = {}
 
 
 class QuickstartRenderer(SphinxRenderer):
+    """Render the template files into source files."""
+
     def __init__(self, templatedir: str = "") -> None:
         self.templatedir = templatedir
         super().__init__()
@@ -25,6 +27,15 @@ class QuickstartRenderer(SphinxRenderer):
         return bool(self.templatedir) and path.exists(template)
 
     def render(self, template_name: str, context: dict[str, Any]) -> str:
+        """Return the rendered text from the template.
+
+        Args:
+            template_name (str): The template file name
+            context (dict[str, Any]): The data used during rendering
+
+        Returns:
+            str: Rendered text
+        """
         if self._has_custom_template(template_name):
             custom_template = path.join(self.templatedir, path.basename(template_name))
             return self.render_from_file(custom_template, context)
@@ -33,6 +44,14 @@ class QuickstartRenderer(SphinxRenderer):
 
 
 def default_to(name: str) -> Callable:
+    """Default to the value of the specified parameter.
+
+    Args:
+        name (str): The name of the parameter to use as a default value
+
+    Returns:
+        Callable: Callback that returns either truthy value or the default
+    """
     return lambda context, param, value: value if value else context.params[name]
 
 
@@ -45,7 +64,6 @@ def default_to(name: str) -> Callable:
 @click.argument("destination")
 def main(project, pypi, author_name, author_email, quiet, destination):
     """Tethys quick start script."""
-
     # get the path to the installed templates in site-packages
     template_dir = path.join(get_python_lib(), "tethys", "templates", "quickstart")
 
