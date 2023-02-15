@@ -58,11 +58,13 @@ def default_to(name: str) -> Callable:
 @click.command()
 @click.option("--project", prompt="Enter the project name", help="Project name")
 @click.option("--pypi", callback=default_to("project"), help="PyPI name")
+@click.option("--description", prompt="Enter the project description", help="Project description")
 @click.option("--author-name", prompt="Enter the author name", help="Author name")
 @click.option("--author-email", prompt="Enter the author e-mail", help="Author e-mail")
+@click.option("--repo", prompt="Enter the Github repository", help="Github repository")
 @click.option("--quiet", is_flag=True, help="Silent when set")
 @click.argument("destination")
-def main(project, pypi, author_name, author_email, quiet, destination):
+def main(project, pypi, description, author_name, author_email, repo, quiet, destination):
     """Tethys quick start script."""
     # get the path to the installed templates in site-packages
     template_dir = path.join(get_python_lib(), "tethys", "templates", "quickstart")
@@ -74,8 +76,10 @@ def main(project, pypi, author_name, author_email, quiet, destination):
     data = {
         "project": project,
         "pypi": pypi,
+        "description": description,
         "author_name": author_name,
         "author_email": author_email,
+        "repo": repo
     }
     template = QuickstartRenderer(template_dir)
 
@@ -89,4 +93,6 @@ def main(project, pypi, author_name, author_email, quiet, destination):
         with open(output_path, "w", encoding="utf-8") as f:
             f.write(template.render_string(contents, data))
 
+    write_template("pyproject.toml_t", "pyproject.toml", data)
     write_template("tox.ini_t", "tox.ini", data)
+    write_template("SECURITY.md_t", "SECURITY.md", data)
