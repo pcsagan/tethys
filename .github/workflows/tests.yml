@@ -27,7 +27,7 @@ jobs:
         run: |
           pip install .
 
-      - name: Runt linters
+      - name: Run linters
         run: |
           tox -e lint
 
