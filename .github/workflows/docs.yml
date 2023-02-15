@@ -22,7 +22,7 @@ jobs:
 
       - name: Install the dependencies
         run: |
-          pip install -e . tox
+          pip install . tox
 
       - name: Generate the docs
         run: |
