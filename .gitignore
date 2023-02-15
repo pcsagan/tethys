@@ -168,4 +168,4 @@ cython_debug/
 
 # generated docs from sphinx-apidoc
 docs/source/modules.rst
-docs/source/tethys.rst
+docs/source/tethys*.rst
