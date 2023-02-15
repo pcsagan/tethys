@@ -54,7 +54,7 @@ test = [
 
 [project.scripts]
 tethys = "tethys.cmd.cli:main"
-tethys-quickstart = "tethys.cmd.cli:main"
+tethys-quickstart = "tethys.cmd.quickstart:main"
 
 [project.urls]
 Code = "https://github.com/pcsagan/tethys"

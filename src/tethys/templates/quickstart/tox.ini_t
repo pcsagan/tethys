@@ -1,0 +1,79 @@
+[tox]
+min_version = 4.0
+env_list =
+    format
+    lint
+    test
+
+[coverage:paths]
+source =
+    src
+    */site-packages
+
+[coverage:run]
+omit =
+    */{{ project }}/cmd/*
+
+[coverage:report]
+fail_under = 100
+
+[flake8]
+# see https://black.readthedocs.io/en/stable/guides/using_black_with_other_tools.html#id2
+max-line-length = 88
+extend-ignore = E203,E501
+
+[pycodestyle]
+ignore = E203,E501
+max_line_length = 88
+
+[pydocstyle]
+add_ignore = D104,D105,D107,D401
+
+[pytest]
+minversion = 6.0
+addopts =
+    -ra
+    -q
+    --cov={{ project }}
+    --cov-config=tox.ini
+testpaths =
+    tests
+
+[testenv:docs]
+description = generate docs
+deps =
+    -e .[docs]
+setenv =
+    SPHINX_APIDOC_OPTIONS = members,show-inheritance # see https://github.com/sphinx-doc/sphinx/issues/8664
+commands =
+    sphinx-apidoc -f -o docs/source src/{{ project }} # using src/{{ project }} prevents 'src' entry in TOC
+    sphinx-build -b html docs/source docs/build/html
+
+[testenv:format]
+description = autoformat the source files
+deps =
+    -e .[format]
+commands =
+    black src
+    isort src tests
+    python -c "from pathlib import Path; from pyupgrade._main import main; main([str(s) for s in list(Path('.').glob('src/**/*.py')) + list(Path('.').glob('tests/**/*.py'))])"
+    pydocstringformatter src tests
+
+[testenv:lint]
+description = validate the source files
+deps =
+    -e .[lint]
+commands =
+    bandit -r src
+    flake8 src tests
+    mypy src
+    pycodestyle src
+    pydocstyle src
+    validate-pyproject pyproject.toml
+
+[testenv:test]
+description = run tests with pytest
+deps =
+    -e .[test]
+commands =
+    pytest --cov-report=html:coverage/py311
