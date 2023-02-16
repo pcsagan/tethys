@@ -28,6 +28,7 @@ dynamic = ["version"]
 
 [project.optional-dependencies]
 docs = [
+    "furo",
     "sphinx",
 ]
 format = [
@@ -42,10 +43,9 @@ lint = [
     "flake8-bugbear",
     "importlib-metadata",   # required for type stubs
     "mypy",
+    "pydocstyle",
     "types-click",
     "types-requests",
-    "pycodestyle",
-    "pydocstyle",
     "sphinx",               # required for type stubs
     "validate-pyproject",
 ]
@@ -56,7 +56,6 @@ test = [
 
 [project.scripts]
 tethys = "tethys.cmd.cli:main"
-tethys-quickstart = "tethys.cmd.quickstart:main"
 
 [project.urls]
 Code = "https://github.com/pcsagan/tethys"
@@ -65,9 +64,6 @@ Actions = "https://github.com/pcsagan/tethys/actions"
 
 [tool.setuptools.dynamic]
 version = {attr = "tethys.__version__"}
-
-[tool.setuptools.package-data]
-"tethys.templates" = ["**/*.*_t"]
 
 [tool.pydocstringformatter]
 write = true
