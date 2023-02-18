@@ -27,15 +27,19 @@ dependencies = ["click", "tox"]
 dynamic = ["version"]
 
 [project.optional-dependencies]
+all = [
+    "tethys-template[build]",
+    "tethys-template[docs]",
+    "tethys-template[lint]",
+    "tethys-template[test]",
+]
+build = [
+    "build",
+    "twine",
+]
 docs = [
     "furo",
     "sphinx",
-]
-format = [
-    "black",
-    "isort",
-    "pyupgrade",
-    "pydocstringformatter",
 ]
 lint = [
     "bandit[toml]",
