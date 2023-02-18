@@ -21,6 +21,15 @@ This package relies heavily on the great work of the [Python Code Quality Author
 - Configuration validation with [validate-pyproject](https://github.com/abravalheri/validate-pyproject)
 - Github actions for [testing](https://github.com/pcsagan/tethys/blob/main/.github/workflows/tests.yml), [documentation](https://github.com/pcsagan/tethys/blob/main/.github/workflows/docs.yml), and [publishing](https://github.com/pcsagan/tethys/blob/main/.github/workflows/publish.yml) to [PyPI](https://pypi.org) and [TestPyPI](https://test.pypi.org)
 
+#### Optional pre-commit hooks
+
+To make use of `.pre-commit-config.yaml` run the followng commands:
+
+```shell
+pip install pre-commit
+pre-commit install
+```
+
 # Documentation
 
 See the [documentation](https://validate-pyproject.readthedocs.io/en/latest/) for more details on this package template.
